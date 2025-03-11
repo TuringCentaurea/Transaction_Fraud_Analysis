@@ -1,69 +1,69 @@
-# Transaction_Fraud_Analysis
-## Project Background
-This study investigates fraudulent activities by analyzing 50,000 financial transaction records. The objective is to identify key risk factors, assess user behavior, and provide actionable insights to strengthen fraud prevention systems. This analysis aims to help financial institutions reduce fraudulent incidents and improve risk assessment strategies.
+**Fraudulent Transactions Analysis Report**
 
-The dataset (add senetence there are 21 features in this datasets) includes comprehensive transaction details, user profiles, and fraud labels, enabling an in-depth examination of factors linked to fraudulent activities. The dataset was processed using SQL for data cleaning, feature engineering, and exploratory data analysis (EDA).
+**Project Background**  
+This study investigates fraudulent activities by analyzing 50,000 financial transaction records. The objective is to identify key risk factors, assess user behavior, and provide actionable insights to strengthen fraud prevention systems. This analysis aims to help financial institutions reduce fraudulent incidents and improve risk assessment strategies.  
+The dataset includes comprehensive transaction details, user profiles, and fraud labels, enabling an in-depth examination of factors linked to fraudulent activities. There are **21 features** in this dataset. The dataset was processed using SQL for data cleaning, feature engineering, and exploratory data analysis (EDA).  
 
-## Executive Summary
-This study focuses on **Leadership, Data Analyst, and Data Science** roles due to data limitations in other categories.
+**Executive Summary**  
+This analysis examined 50,000 financial transaction records, with fraudulent transactions representing **32.1%** of all entries. The study identified key patterns and behaviors that contributed to fraudulent incidents.  
 
-**Data Science** has the highest representation **(515 individuals)** with an **average salary of $164,099**, primarily held by **PhD graduates (71.26%)**. **Data Analysts (391 individuals)** earn an **average of $120,606**, with most holding a **Bachelor’s degree (79.8%)**. **Leadership roles (58 individuals)** have the **highest salary** at **$204,827**, with **100% holding a PhD**.
+* **Fraud Trends by Time:** Fraudulent activities were fairly consistent throughout the day, with peak incidents occurring at **11 AM**, **10 AM**, and **2 AM**.  
+* **Fraud by Month:** Fraud occurrences were highest in **August**, **December**, and **January**.  
+* **High-Risk Users:** Over **53%** of fraud cases involved users with repeated fraudulent incidents.  
+* **Transaction Patterns:** Fraudulent transactions exhibited slightly higher average amounts compared to non-fraudulent transactions (approx. **$99.68** vs **$99.28**).  
+* **Risk Scores:** The average risk score for fraudulent transactions was **0.6629**, while non-fraudulent transactions had a lower average risk score of **0.425**.  
+* **Geographical Trends:** Fraud rates were consistent across major cities like **New York**, **Tokyo**, **Sydney**, **London**, and **Mumbai**, with percentages ranging from **31.5%** to **32.5%**.  
+* **Device Vulnerability:** Fraud incidents were fairly evenly distributed across **Laptop**, **Mobile**, and **Tablet** devices.  
 
-**Salary growth is tied to experience**, with **Data Scientists** progressing from **$108,636 (5 years) to $240,000 (25 years)**. Promotions in **Data Analysis** show a **200% salary increase** from **Junior to Senior** roles. **Leadership salaries rise steadily with experience, reaching $220,000 at 20 years**.
+**Data Preparation**  
+* **Null Data Handling:** No missing data was identified in the dataset. Additional checks for erroneous values ensured the data’s integrity.  
+* **Data Type Correction:** Key fields such as **Transaction_ID**, **Transaction_Amount**, and **Timestamp** were converted to appropriate data types to enhance compatibility with SQL functions.  
+* **Feature Engineering:** Additional columns such as **Season**, **Month**, **Day**, and **Hour** were generated from the **Timestamp** field to allow deeper time-based analysis.  
+* **Duplicate Entries:** The dataset was verified for duplicates, and no duplicate entries were found, ensuring data reliability.  
 
-The **most common** job title is **Data Scientist (453 records), followed by Data Analyst (363 records)**. Senior and leadership roles appear less frequently but offer **higher earning potential**.
-## [Salary Analysis Dashboard](https://public.tableau.com/views/salary_analysis_entry/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-[![image](https://github.com/user-attachments/assets/3586780d-c77d-4386-b7c7-98f48188b409)](https://public.tableau.com/views/salary_analysis_entry/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+**Insights Deep-Dive or Summary of Insights**  
 
+* **Time-Based Analysis**  
+  * Fraud incidents were consistently distributed across different hours of the day, with slight peaks at **11 AM**, **10 AM**, and **2 AM**.  
+  * Fraud occurrences peaked in **August**, followed by **December** and **January**.  
 
-## Data Preparation
-### Handling Missing Data
-The dataset contained **6,699 entries** after cleaning. Since data was imported from **Excel to SQL, empty rows were removed** before analysis.
-### Correcting Import Errors
-During import, the **"age" column** had encoding errors, resulting in **garbled text**. This issue was corrected, and the column name was restored.
-### Standardizing Inconsistent Values
-The **"Education Level" column** contained variations such as **"Bachelor's Degree" and "Bachelor’s"**, which were standardized for consistency.
-### Dealing with Duplicate Entries
-Approximately **4,913 duplicate entries** (70% of the dataset) were identified. Since removing them would significantly reduce the sample size, they were **retained** for reference but flagged in the analysis to prevent skewed insights.
+* **User Analysis**  
+  * **High-Risk Users:** Over **53%** of fraud incidents involved repeat offenders.  
+  * Users with prior fraudulent history were **4 times** more likely to encounter repeat fraud attempts.  
 
-## Insights Deep-Dive
-### 1.	Educational Distribution Across Job Functions
-* **PhD degrees are dominant in high-paying roles**, particularly in **Leadership (100%)** and **Data Science (71.26%)**.
-* **Data Analyst positions are the most accessible**, with **79.8% of professionals holding a Bachelor's degree**.
-### 2.	Salary Growth & Career Progression
-*	Experience significantly impacts salaries:
-** **Data Scientists**' salaries grow from **$108,636 (5 years)** to **$240,000 (25 years)**.
-**	**Senior Data Analysts earn 3 times more than Junior Analysts**, with an increase from **$51,360** to **$155,000**.
-**	**Chief Data Officers** earn **$220,000** with an **average of 17.67 years** of experience.
-*	**Leadership salaries** steadily rise, reaching **$220,000 by 20 years** of experience.
-### 3.	Most Common Job Titles & Market Demand
-* **Data Scientist** (453 records) and **Data Analyst** (363 records) are the **most frequent roles**, indicating high market demand.
-*	**Senior and leadership** roles appear **less frequently** but offer significantly **higher salaries**.
+* **Transaction Analysis**  
+  * Fraudulent transactions had an average amount of **$99.68**, compared to **$99.28** for non-fraudulent ones.  
+  * The majority of fraudulent cases involved **Bank Transfer** and **POS** transactions.  
+  * **Zero-Amount Transactions:** A total of **93** fraudulent transactions had **Transaction_Amount = 0**, indicating successful prevention strategies.  
 
-## Recommendations
-Based on the analysis, the following recommendations are provided to help individuals **navigate career paths** in data-related fields. 
-### For Entry-Level Professionals:
-* Pursuing a **Bachelor’s degree** is the most common route to Data Analyst roles, providing an accessible entry into the industry.
-*	**For aspiring Data Scientists**, obtaining a **PhD** offers **higher starting salaries**, but alternative pathways include **bootcamps, certifications, and hands-on projects**.
-### For Mid-Career Professionals:
-* Consider **upskilling through a Master’s or PhD** to transition into **Data Science or Leadership roles**.
-* **Gaining 5+ years** of experience significantly boosts earning potential, with **Data Scientist salaries rising from $108,636 to $164,099**.
-### For Long-Term Career Growth:
-* **Leadership roles** offer the **highest salaries** but **require extensive experience (15+ years) and a PhD**.
-*	Target **promotions within Data Analysis or Data Science**, as moving from **Junior to Senior** roles can result in a **3x salary increase**.
-### For Job Market Competitiveness:
-***	Data Science and Data Analyst** roles remain in **high demand**, making them strategic career choices.
-*	**Senior and leadership** positions are **less frequent but lucrative**, emphasizing the need for **long-term career planning**.
+* **Risk Score Analysis**  
+  * The average fraud risk score was **0.6629**, while non-fraud transactions averaged **0.425**.  
+  * Surprisingly, some transactions with **low-risk scores** (below **0.2**) were later identified as fraudulent, exposing vulnerabilities in the scoring model.  
 
-## Clarifying Questions, Assumptions, and Caveats
-*	Salary trends are primarily influenced by education and experience, though factors like location, industry, and company size also contribute.
-*	The dataset includes **969 job records from a larger dataset of 6,500+**, which **may not fully capture all job markets**.
-*	**Leadership and Data Engineering roles are underrepresented (58 and 4 records, respectively)**, limiting insights for these roles.
-*	Salary growth **is based on averages across job titles** and may vary depending on job responsibilities and industry.
-*	**This dataset** was sourced from Kaggle and **may contain data from several years ago**. Therefore, this report does **not reflect the most up-to-date job market trends** but provides an analysis based on the available dataset.
+* **Geographical Analysis**  
+  * Fraud rates were evenly distributed across cities such as **New York**, **Tokyo**, **Sydney**, **London**, and **Mumbai**, each showing fraud rates between **31.5%** and **32.5%**.  
 
-## Technical Project Information
-The [orginal data is avaliable](salary_data.json) here used for this analysis was sourced from **Kaggle**, containing data from multiple sources, including surveys, job postings, and publicly available records**. The dataset includes details on job titles, salaries, education levels, years of experience, and job functions.
+* **Device Analysis**  
+  * Fraud incidents were consistently distributed across devices with **Laptop** (**5,298 cases**), **Mobile** (**5,305 cases**), and **Tablet** (**5,464 cases**) all showing comparable risks.  
 
-Data cleaning and transformation were performed in **SQL**, including handling missing values and standardizing job categoriesm, you can [view the SQL script here](salary_sql.sql). The final dataset was then **analyzed and visualized using Tableau**, providing key insights into salary distribution, career progression, and job market trends, you can check out the [Salary Analysis - Tableau Dashboard](https://public.tableau.com/views/salary_analysis_entry/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+**Recommendations**  
+Based on the analysis, the following recommendations are provided to strengthen fraud detection and prevention efforts:  
+
+1. **Enhanced Fraud Detection Algorithms:** Develop machine learning models that integrate key features such as **Hour**, **Risk_Score**, and **Transaction_Amount** to improve predictive accuracy.  
+2. **Behavior-Based Anomaly Detection:** Introduce monitoring systems that identify unusual transaction patterns during high-risk periods (e.g., early morning hours).  
+3. **User Risk Profiling:** Implement a **High-Risk User Flag** to closely monitor users with repeated fraudulent behavior.  
+4. **Risk Score Improvement:** Enhance the risk scoring model to improve the detection of suspicious low-risk transactions.  
+5. **Proactive Fraud Prevention Systems:** Strengthen real-time monitoring and interception systems to block suspicious transactions before completion.  
+6. **Device-Specific Safeguards:** Introduce stricter security protocols for transactions initiated via **Mobile** and **Tablet** devices.  
+7. **Cross-Border Transaction Monitoring:** Introduce stricter security checks for transactions originating from high-risk international regions.  
+8. **Targeted Merchant Monitoring:** Develop customized alerts for high-risk merchant categories such as **Travel**, **Clothing**, and **Electronics**.  
+
+**Assumptions and Caveats**  
+* This analysis assumes that fraudulent activities are influenced primarily by **transaction amounts**, **user behavior**, and **risk scores**, though other factors such as merchant type and device security may also play a role.  
+* The dataset provides comprehensive details but may not account for emerging fraud tactics or sophisticated fraud methods not yet captured in transaction logs.  
+* The proposed strategies are designed to complement existing fraud prevention protocols, ensuring robust security frameworks.  
+
+**Technical Project Information**  
+The dataset used for this analysis was processed using **SQL** for data cleaning, feature engineering, and exploratory analysis. Additional insights were generated through visualizations in **Python** for clearer trend identification.  
+The combination of advanced statistical methods, behavioral pattern recognition, and predictive modeling aims to enhance fraud detection accuracy and minimize financial losses.
 
