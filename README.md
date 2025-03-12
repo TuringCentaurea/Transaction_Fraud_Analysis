@@ -46,7 +46,6 @@ This analysis examined 50,000 financial transaction records, with fraudulent tra
 
 ### Geographical Analysis 
   * Fraud rates were evenly distributed across cities such as **New York**, **Tokyo**, **Sydney**, **London**, and **Mumbai**, each showing fraud rates between **31.5%** and **32.5%**.
-    ![image](https://github.com/user-attachments/assets/3c24c5c0-8cd8-40d5-9181-11d6e25140c6)
 ### Device Analysis 
   * Fraud incidents were consistently distributed across devices with **Laptop** (**5,298 cases**), **Mobile** (**5,305 cases**), and **Tablet** (**5,464 cases**) all showing comparable risks.
     ![image](https://github.com/user-attachments/assets/51acdcd8-eb8b-4786-bd3e-ecd14e5f6215)
