@@ -25,26 +25,31 @@ This analysis examined 50,000 financial transaction records, with fraudulent tra
 
 ### Time-Based Analysis  
   * Fraud incidents were consistently distributed across different hours of the day, with slight peaks at **11 AM**, **10 AM**, and **2 AM**.  
-  * Fraud occurrences peaked in **August**, followed by **December** and **January**.  
+  * Fraud occurrences peaked in **August**, followed by **December** and **January**.
+    ![image](https://github.com/user-attachments/assets/873e8f4a-6458-4977-b77b-d9d8f95b1295)
 
 ### User Analysis  
   * **High-Risk Users:** Over **53%** of fraud incidents involved repeat offenders.  
-  * Users with prior fraudulent history were **4 times** more likely to encounter repeat fraud attempts.  
+  * Users with prior fraudulent history were **4 times** more likely to encounter repeat fraud attempts.
+    ![image](https://github.com/user-attachments/assets/750edb96-c1b8-4fea-a306-c919d8c643c5)
 
 ### Transaction Analysis  
   * Fraudulent transactions had an average amount of **$99.68**, compared to **$99.28** for non-fraudulent ones.  
   * The majority of fraudulent cases involved **Bank Transfer** and **POS** transactions.  
-  * **Zero-Amount Transactions:** A total of **93** fraudulent transactions had **Transaction_Amount = 0**, indicating successful prevention strategies.  
+  * **Zero-Amount Transactions:** A total of **93** fraudulent transactions had **Transaction_Amount = 0**, indicating successful prevention strategies.
+    ![image](https://github.com/user-attachments/assets/7bdc52bb-8538-4665-b2f0-93af96f0f4bc)
 
 ### Risk Score Analysis 
   * The average fraud risk score was **0.6629**, while non-fraud transactions averaged **0.425**.  
-  * Surprisingly, some transactions with **low-risk scores** (below **0.2**) were later identified as fraudulent, exposing vulnerabilities in the scoring model.  
+  * Surprisingly, some transactions with **low-risk scores** (below **0.2**) were later identified as fraudulent, exposing vulnerabilities in the scoring model.
+    ![image](https://github.com/user-attachments/assets/60807ccb-d4bc-4d45-ac90-e216a40ad6bc)
 
 ### Geographical Analysis 
-  * Fraud rates were evenly distributed across cities such as **New York**, **Tokyo**, **Sydney**, **London**, and **Mumbai**, each showing fraud rates between **31.5%** and **32.5%**.  
-
+  * Fraud rates were evenly distributed across cities such as **New York**, **Tokyo**, **Sydney**, **London**, and **Mumbai**, each showing fraud rates between **31.5%** and **32.5%**.
+    ![image](https://github.com/user-attachments/assets/3c24c5c0-8cd8-40d5-9181-11d6e25140c6)
 ### Device Analysis 
-  * Fraud incidents were consistently distributed across devices with **Laptop** (**5,298 cases**), **Mobile** (**5,305 cases**), and **Tablet** (**5,464 cases**) all showing comparable risks.  
+  * Fraud incidents were consistently distributed across devices with **Laptop** (**5,298 cases**), **Mobile** (**5,305 cases**), and **Tablet** (**5,464 cases**) all showing comparable risks.
+    ![image](https://github.com/user-attachments/assets/51acdcd8-eb8b-4786-bd3e-ecd14e5f6215)
 
 ## Recommendations  
 Based on the analysis, the following recommendations are provided to strengthen fraud detection and prevention efforts:  
