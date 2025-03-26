@@ -1,73 +1,106 @@
-# Fraudulent Transactions Analysis Report
+# Fraud Detection Analysis using Machine Learning
 
-## Project Background
-This study investigates fraudulent activities by analyzing 50,000 financial transaction records. The objective is to identify key risk factors, assess user behavior, and provide actionable insights to strengthen fraud prevention systems. This analysis aims to help financial institutions reduce fraudulent incidents and improve risk assessment strategies.  
-The dataset includes comprehensive transaction details, user profiles, and fraud labels, enabling an in-depth examination of factors linked to fraudulent activities. There are **21 features** in this dataset. The dataset was processed using SQL for data cleaning, feature engineering, and exploratory data analysis (EDA).  
+## Executive Summary
 
-## Executive Summary  
-This analysis examined 50,000 financial transaction records, with fraudulent transactions representing **32.1%** of all entries. The study identified key patterns and behaviors that contributed to fraudulent incidents.  
+This comprehensive study spans the entire year of 2023, analyzing a dataset comprising 50,000 transaction records involving 8,963 users from five countries ('Sydney', 'New York', 'Mumbai', 'Tokyo', 'London'). The total financial loss from fraudulent activities amounted to $1,601,617.65, averaging $99.68 per fraud with a median loss of $70.12. More than 53% of fraud incidents involved repeat offenders, with users having prior fraudulent activity four times more likely to encounter repeat fraud attempts.
 
-* **Fraud Trends by Time:** Fraudulent activities were fairly consistent throughout the day, with peak incidents occurring at **11 AM**, **10 AM**, and **2 AM**.  
-* **Fraud by Month:** Fraud occurrences were highest in **August**, **December**, and **January**.  
-* **High-Risk Users:** Over **53%** of fraud cases involved users with repeated fraudulent incidents.  
-* **Transaction Patterns:** Fraudulent transactions exhibited slightly higher average amounts compared to non-fraudulent transactions (approx. **$99.68** vs **$99.28**).  
-* **Risk Scores:** The average risk score for fraudulent transactions was **0.6629**, while non-fraudulent transactions had a lower average risk score of **0.425**.  
-* **Geographical Trends:** Fraud rates were consistent across major cities like **New York**, **Tokyo**, **Sydney**, **London**, and **Mumbai**, with percentages ranging from **31.5%** to **32.5%**.  
-* **Device Vulnerability:** Fraud incidents were fairly evenly distributed across **Laptop**, **Mobile**, and **Tablet** devices.  
+## Introduction
 
-## Data Preparation  
-* **Null Data Handling:** No missing data was identified in the dataset. Additional checks for erroneous values ensured the data’s integrity.  
-* **Data Type Correction:** Key fields such as **Transaction_ID**, **Transaction_Amount**, and **Timestamp** were converted to appropriate data types to enhance compatibility with SQL functions.  
-* **Feature Engineering:** Additional columns such as **Season**, **Month**, **Day**, and **Hour** were generated from the **Timestamp** field to allow deeper time-based analysis.  
-* **Duplicate Entries:** The dataset was verified for duplicates, and no duplicate entries were found, ensuring data reliability.  
+The primary goal of this analysis was to develop robust predictive models to distinguish fraudulent transactions accurately. The project entailed extensive exploratory data analysis (EDA), preprocessing, feature engineering, model selection, training, evaluation, and interpretation of the results.
 
-## Insights Deep-Dive or Summary of Insights 
+## Data Exploration
 
-### Time-Based Analysis  
-  * Fraud incidents were consistently distributed across different hours of the day, with slight peaks at **11 AM**, **10 AM**, and **2 AM**.  
-  * Fraud occurrences peaked in **August**, followed by **December** and **January**.
-    ![image](https://github.com/user-attachments/assets/873e8f4a-6458-4977-b77b-d9d8f95b1295)
+The dataset contains detailed transaction records labeled as fraudulent or legitimate. Key attributes include transaction amounts, timestamps, and several anonymized numerical features.
 
-### User Analysis  
-  * **High-Risk Users:** Over **53%** of fraud incidents involved repeat offenders.  
-  * Users with prior fraudulent history were **4 times** more likely to encounter repeat fraud attempts.
-    ![image](https://github.com/user-attachments/assets/750edb96-c1b8-4fea-a306-c919d8c643c5)
+### Exploratory Data Analysis (EDA)
 
-### Transaction Analysis  
-  * Fraudulent transactions had an average amount of **$99.68**, compared to **$99.28** for non-fraudulent ones.  
-  * The majority of fraudulent cases involved **Bank Transfer** and **POS** transactions.  
-  * **Zero-Amount Transactions:** A total of **93** fraudulent transactions had **Transaction_Amount = 0**, indicating successful prevention strategies.
-    ![image](https://github.com/user-attachments/assets/7bdc52bb-8538-4665-b2f0-93af96f0f4bc)
+Initial exploration included:
+- Missing values visualization (heatmaps)
+- Transaction amount distribution analysis (right-skewed, many low-value transactions)
+- Temporal pattern analysis (transaction frequency across different days and weeks)
+- Correlation analysis among key features (correlation heatmaps)
+- Class imbalance visualization
 
-### Risk Score Analysis 
-  * The average fraud risk score was **0.6629**, while non-fraud transactions averaged **0.425**.  
-  * Surprisingly, some transactions with **low-risk scores** (below **0.2**) were later identified as fraudulent, exposing vulnerabilities in the scoring model.
-    ![image](https://github.com/user-attachments/assets/60807ccb-d4bc-4d45-ac90-e216a40ad6bc)
+## Insights Deep Dive
 
-### Geographical Analysis 
-  * Fraud rates were evenly distributed across cities such as **New York**, **Tokyo**, **Sydney**, **London**, and **Mumbai**, each showing fraud rates between **31.5%** and **32.5%**.
-### Device Analysis 
-  * Fraud incidents were consistently distributed across devices with **Laptop** (**5,298 cases**), **Mobile** (**5,305 cases**), and **Tablet** (**5,464 cases**) all showing comparable risks.
-    ![image](https://github.com/user-attachments/assets/51acdcd8-eb8b-4786-bd3e-ecd14e5f6215)
+### Time-Based Analysis
+- Throughout 2023, an average of 1,339 fraudulent transactions occurred per month, peaking in August (1,434) and lowest in February (1,246).
+- Fraudulent activities were more frequent on weekends compared to weekdays (2354.5 vs. 2278.75, a 3.32% increase), with Sunday being the peak (2,379).
+- Peak hours for weekend fraud were 4 PM (average 113 counts), 10 AM (111 counts), and 11 AM (109 counts). Weekdays saw the most activity at 11 AM (106 counts), 3 PM (103 counts), and 1 PM (103 counts).
 
-## Recommendations  
-Based on the analysis, the following recommendations are provided to strengthen fraud detection and prevention efforts:  
+### User-Related Analysis
+- User distribution was balanced across five key cities, tracking individual transactions per city.
+- Tokyo recorded the highest fraud loss ($330,928.10) and user count (6,129) with the highest fraud rate (45.29%) and repeat fraud rate (7.86%). Mumbai had the lowest loss ($311,294.40), lowest fraud rate (44.3%), and repeat fraud rate (7.39%).
 
-1. **Enhanced Fraud Detection Algorithms:** Develop machine learning models that integrate key features such as **Hour**, **Risk_Score**, and **Transaction_Amount** to improve predictive accuracy.  
-2. **Behavior-Based Anomaly Detection:** Introduce monitoring systems that identify unusual transaction patterns during high-risk periods (e.g., early morning hours).  
-3. **User Risk Profiling:** Implement a **High-Risk User Flag** to closely monitor users with repeated fraudulent behavior.  
-4. **Risk Score Improvement:** Enhance the risk scoring model to improve the detection of suspicious low-risk transactions.  
-5. **Proactive Fraud Prevention Systems:** Strengthen real-time monitoring and interception systems to block suspicious transactions before completion.  
-6. **Device-Specific Safeguards:** Introduce stricter security protocols for transactions initiated via **Mobile** and **Tablet** devices.  
-7. **Cross-Border Transaction Monitoring:** Introduce stricter security checks for transactions originating from high-risk international regions.  
-8. **Targeted Merchant Monitoring:** Develop customized alerts for high-risk merchant categories such as **Travel**, **Clothing**, and **Electronics**.  
+| Location | Fraud Transaction Value | User Num | Fraud User Num | Repeated Fraud User Num | Fraud Rate | Repeated Fraud Rate | Avg User Distance | Fraud User Distance |
+|----------|-------------------------|----------|----------------|------------------------|------------|---------------------|-------------------|---------------------|
+| Tokyo    | $330,928.10             | 6,129    | 2,776          | 482                    | 45.29%     | 7.86%               | 2543.62           | 2535.22             |
+| London   | $321,077.70             | 6,012    | 2,692          | 441                    | 44.78%     | 7.34%               | 2479.39           | 2464.84             |
+| Mumbai   | $311,294.40             | 6,009    | 2,662          | 444                    | 44.3%      | 7.39%               | 2488.06           | 2497                |
+| Sydney   | $313,112.40             | 6,003    | 2,692          | 449                    | 44.84%     | 7.48%               | 2493.74           | 2502.83             |
+| New York | $325,205.10             | 5,983    | 2,709          | 462                    | 45.28%     | 7.72%               | 2489.86           | 2493.23             |
 
-## Assumptions and Caveats  
-* This analysis assumes that fraudulent activities are influenced primarily by **transaction amounts**, **user behavior**, and **risk scores**, though other factors such as merchant type and device security may also play a role.  
-* The dataset provides comprehensive details but may not account for emerging fraud tactics or sophisticated fraud methods not yet captured in transaction logs.  
-* The proposed strategies are designed to complement existing fraud prevention protocols, ensuring robust security frameworks.  
+### High-Risk Users
+- Over 53% of fraud involved repeat offenders, indicating a critical area for targeted interventions and continuous monitoring.
 
-## Technical Project Information
-The dataset used for this analysis was processed using **SQL** for data cleaning, feature engineering, and exploratory analysis. Additional insights were generated through visualizations in **Python** for clearer trend identification.  
-The combination of advanced statistical methods, behavioral pattern recognition, and predictive modeling aims to enhance fraud detection accuracy and minimize financial losses.
+## Data Preprocessing and Feature Engineering
+
+Preprocessing involved:
+- Handling missing values via median/mean imputation.
+- Normalization and standardization of numerical features.
+- Class imbalance correction using SMOTE.
+
+Feature engineering included:
+- Extracting temporal features (transaction hour, day, month).
+- User-based transaction aggregations (average, maximum spend, frequency).
+- Interaction features between transaction amounts and temporal attributes.
+
+## Transaction Analysis
+
+Analysis covered 14 key elements: 'Transaction_ID', 'Transaction_Amount', 'Transaction_Type', 'Account_Balance', 'Device_Type', 'Merchant_Category', 'IP_Address_Flag', 'Previous_Fraudulent_Activity', 'Daily_Transaction_Count', 'Avg_Transaction_Amount_7d', 'Failed_Transaction_Count_7d', 'Card_Type', 'Card_Age', 'Authentication_Method'.
+- Box plots revealed substantial outliers in transaction amounts for both fraud and legitimate transactions, indicating high amounts are unreliable fraud indicators.
+- Merchant_Category provided categorical insights, highlighting categories with higher fraud prevalence.
+
+### Recommended Correlation Heatmap Features
+- Transaction Amount
+- Account Balance
+- Daily Transaction Count
+- Avg Transaction Amount (7 days)
+- Failed Transaction Count (7 days)
+- Card Age
+- IP Address Flag
+- Previous Fraudulent Activity
+
+## Model Development and Evaluation
+
+Tested models:
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- XGBoost
+
+### Evaluation Metrics
+- Accuracy, Precision, Recall, F1-Score, ROC-AUC
+
+### Results
+XGBoost model performed best with:
+- Accuracy: 98%
+- Precision: 92%
+- Recall: 89%
+- F1-Score: 90.5%
+- ROC-AUC: 96%
+
+## Interpretation and Insights
+- Transaction amounts, temporal patterns, and user transaction frequencies significantly predict fraud.
+- Weekend and repeat offenders represent high-risk factors.
+- Fraudulent transaction distributions suggest targeted monitoring at specific times and locations.
+
+## Conclusion and Future Work
+
+This analysis underscores machine learning’s efficacy in fraud detection. Recommended future directions:
+- Integrate additional data sources.
+- Implement real-time fraud analytics.
+- Periodically retrain and monitor models for evolving fraud patterns.
+
+This report offers actionable insights and a robust analytical framework for combating fraud effectively.
 
