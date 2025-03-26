@@ -30,6 +30,7 @@ Initial exploration included:
 - Peak hours for weekend fraud were 4 PM (average 113 counts), 10 AM (111 counts), and 11 AM (109 counts). Weekdays saw the most activity at 11 AM (106 counts), 3 PM (103 counts), and 1 PM (103 counts).
 
 ### User-Related Analysis
+
 ![image](https://github.com/user-attachments/assets/cbf54fbf-d482-4844-9c57-eaee16516852)
 - User distribution was balanced across five key cities, tracking individual transactions per city.
 - Tokyo recorded the highest fraud loss ($330,928.10) and user count (6,129) with the highest fraud rate (45.29%) and repeat fraud rate (7.86%). Mumbai had the lowest loss ($311,294.40), lowest fraud rate (44.3%), and repeat fraud rate (7.39%).
@@ -78,6 +79,8 @@ Tested models:
 
 ### Evaluation Metrics
 - Accuracy, Precision, Recall, F1-Score, ROC-AUC
+- ![image](https://github.com/user-attachments/assets/2de6ec17-bc01-43c1-80b3-fafc861368c9)
+
 
 ### Results
 XGBoost model performed best with:
