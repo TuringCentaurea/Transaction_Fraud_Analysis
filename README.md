@@ -24,14 +24,15 @@ Initial exploration included:
 ## Insights Deep Dive
 
 ### Time-Based Analysis
+![image](https://github.com/user-attachments/assets/9225d740-7470-4241-8349-66cf5db13c04)
 - Throughout 2023, an average of 1,339 fraudulent transactions occurred per month, peaking in August (1,434) and lowest in February (1,246).
 - Fraudulent activities were more frequent on weekends compared to weekdays (2354.5 vs. 2278.75, a 3.32% increase), with Sunday being the peak (2,379).
 - Peak hours for weekend fraud were 4 PM (average 113 counts), 10 AM (111 counts), and 11 AM (109 counts). Weekdays saw the most activity at 11 AM (106 counts), 3 PM (103 counts), and 1 PM (103 counts).
 
 ### User-Related Analysis
+![image](https://github.com/user-attachments/assets/cbf54fbf-d482-4844-9c57-eaee16516852)
 - User distribution was balanced across five key cities, tracking individual transactions per city.
 - Tokyo recorded the highest fraud loss ($330,928.10) and user count (6,129) with the highest fraud rate (45.29%) and repeat fraud rate (7.86%). Mumbai had the lowest loss ($311,294.40), lowest fraud rate (44.3%), and repeat fraud rate (7.39%).
-
 | Location | Fraud Transaction Value | User Num | Fraud User Num | Repeated Fraud User Num | Fraud Rate | Repeated Fraud Rate | Avg User Distance | Fraud User Distance |
 |----------|-------------------------|----------|----------------|------------------------|------------|---------------------|-------------------|---------------------|
 | Tokyo    | $330,928.10             | 6,129    | 2,776          | 482                    | 45.29%     | 7.86%               | 2543.62           | 2535.22             |
@@ -56,10 +57,11 @@ Feature engineering included:
 - Interaction features between transaction amounts and temporal attributes.
 
 ## Transaction Analysis
-
 Analysis covered 14 key elements: 'Transaction_ID', 'Transaction_Amount', 'Transaction_Type', 'Account_Balance', 'Device_Type', 'Merchant_Category', 'IP_Address_Flag', 'Previous_Fraudulent_Activity', 'Daily_Transaction_Count', 'Avg_Transaction_Amount_7d', 'Failed_Transaction_Count_7d', 'Card_Type', 'Card_Age', 'Authentication_Method'.
 - Box plots revealed substantial outliers in transaction amounts for both fraud and legitimate transactions, indicating high amounts are unreliable fraud indicators.
+- ![image](https://github.com/user-attachments/assets/b8b1ec96-8795-4e00-8157-5007157c9022)
 - Merchant_Category provided categorical insights, highlighting categories with higher fraud prevalence.
+- ![image](https://github.com/user-attachments/assets/018c82da-e55f-4483-bbfd-53ef5d56c734)
 
 ### Recommended Correlation Heatmap Features
 - Transaction Amount
@@ -70,6 +72,7 @@ Analysis covered 14 key elements: 'Transaction_ID', 'Transaction_Amount', 'Trans
 - Card Age
 - IP Address Flag
 - Previous Fraudulent Activity
+![image](https://github.com/user-attachments/assets/3dd29676-f4c6-4ad6-9e73-9b0ae14de5fe)
 
 ## Model Development and Evaluation
 
@@ -84,11 +87,11 @@ Tested models:
 
 ### Results
 XGBoost model performed best with:
-- Accuracy: 98%
-- Precision: 92%
-- Recall: 89%
-- F1-Score: 90.5%
-- ROC-AUC: 96%
+- Accuracy: 100%
+- Precision: 100%
+- Recall: 100%
+- F1-Score: 100%
+- ROC-AUC: 100%
 
 ## Interpretation and Insights
 - Transaction amounts, temporal patterns, and user transaction frequencies significantly predict fraud.
@@ -97,10 +100,12 @@ XGBoost model performed best with:
 
 ## Conclusion and Future Work
 
-This analysis underscores machine learning’s efficacy in fraud detection. Recommended future directions:
-- Integrate additional data sources.
-- Implement real-time fraud analytics.
-- Periodically retrain and monitor models for evolving fraud patterns.
+This analysis underscores machine learning’s efficacy in fraud detection. However, the dataset used in this study has certain limitations, primarily its simulated nature, which may not fully reflect real-world scenarios. Recommended future directions include:
+- Integrating real-world data from diverse and more extensive transaction datasets to improve model generalization.
+- Implementing real-time fraud analytics to promptly identify and address fraudulent activities.
+- Periodically retraining and continuously monitoring the models to adapt to evolving fraud patterns and new fraud methodologies.
+By addressing these limitations and applying real transaction data, future analyses can enhance fraud detection capabilities, ensuring robust protection against fraudulent activities.
 
-This report offers actionable insights and a robust analytical framework for combating fraud effectively.
+
+
 
