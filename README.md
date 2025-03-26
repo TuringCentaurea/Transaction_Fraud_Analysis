@@ -33,13 +33,7 @@ Initial exploration included:
 ![image](https://github.com/user-attachments/assets/cbf54fbf-d482-4844-9c57-eaee16516852)
 - User distribution was balanced across five key cities, tracking individual transactions per city.
 - Tokyo recorded the highest fraud loss ($330,928.10) and user count (6,129) with the highest fraud rate (45.29%) and repeat fraud rate (7.86%). Mumbai had the lowest loss ($311,294.40), lowest fraud rate (44.3%), and repeat fraud rate (7.39%).
-| Location | Fraud Transaction Value | User Num | Fraud User Num | Repeated Fraud User Num | Fraud Rate | Repeated Fraud Rate | Avg User Distance | Fraud User Distance |
-|----------|-------------------------|----------|----------------|------------------------|------------|---------------------|-------------------|---------------------|
-| Tokyo    | $330,928.10             | 6,129    | 2,776          | 482                    | 45.29%     | 7.86%               | 2543.62           | 2535.22             |
-| London   | $321,077.70             | 6,012    | 2,692          | 441                    | 44.78%     | 7.34%               | 2479.39           | 2464.84             |
-| Mumbai   | $311,294.40             | 6,009    | 2,662          | 444                    | 44.3%      | 7.39%               | 2488.06           | 2497                |
-| Sydney   | $313,112.40             | 6,003    | 2,692          | 449                    | 44.84%     | 7.48%               | 2493.74           | 2502.83             |
-| New York | $325,205.10             | 5,983    | 2,709          | 462                    | 45.28%     | 7.72%               | 2489.86           | 2493.23             |
+![image](https://github.com/user-attachments/assets/bd16948e-23a4-44e4-bb03-64d6cbcdce70)
 
 ### High-Risk Users
 - Over 53% of fraud involved repeat offenders, indicating a critical area for targeted interventions and continuous monitoring.
