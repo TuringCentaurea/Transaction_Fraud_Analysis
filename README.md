@@ -4,6 +4,16 @@
 
 This comprehensive study spans the entire year of 2023, analyzing a dataset comprising 50,000 transaction records involving 8,963 users from five countries ('Sydney', 'New York', 'Mumbai', 'Tokyo', 'London'). The total financial loss from fraudulent activities amounted to $1,601,617.65, averaging $99.68 per fraud with a median loss of $70.12. More than 53% of fraud incidents involved repeat offenders, with users having prior fraudulent activity four times more likely to encounter repeat fraud attempts.
 
+## Detailed Summary
+
+This study leveraged advanced machine learning methods to analyze fraudulent transactions comprehensively across various geographic and temporal dimensions. The analysis was conducted in several stages, beginning with thorough exploratory data analysis (EDA), which provided insights into the frequency and distribution of fraudulent activities, highlighting a notable spike on weekends and specific peak hours during the day. User-related analyses indicated significant differences in fraud rates and repeat fraud occurrences across cities, with Tokyo exhibiting the highest financial losses and fraud rates.
+
+Preprocessing efforts addressed missing values, normalized data, and mitigated class imbalance through techniques such as SMOTE, while feature engineering enhanced predictive capabilities by creating temporal, transactional, and interaction-based features. Detailed transaction analysis using 14 distinct data elements, such as 'Transaction Amount,' 'Merchant Category,' and 'Previous Fraudulent Activity,' offered additional insights, revealing notable challenges in using transaction amounts alone as a reliable fraud indicator.
+
+Several machine learning models were rigorously tested, including Logistic Regression, Decision Tree, Random Forest, and XGBoost. The XGBoost model emerged as superior, delivering an accuracy, precision, recall, F1-score, and ROC-AUC score of 100%, reflecting robust predictive accuracy.
+
+While the model demonstrated exceptional predictive performance, the simulated nature of the dataset presents limitations regarding real-world applicability. Consequently, future studies are recommended to apply these analytical methods to real transaction datasets, implement real-time analytics, and periodically retrain models to remain effective against evolving fraud tactics.
+
 ## Introduction
 
 The primary goal of this analysis was to develop robust predictive models to distinguish fraudulent transactions accurately. The project entailed extensive exploratory data analysis (EDA), preprocessing, feature engineering, model selection, training, evaluation, and interpretation of the results.
